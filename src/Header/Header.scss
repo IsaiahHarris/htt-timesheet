@@ -1,0 +1,111 @@
+.Header-logo {
+  display: none;
+}
+.Header-header {
+  background-color: #4c525a;
+  height: 15vh;
+  padding: 20px;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding-top: 15px;
+  .choices {
+    display: flex;
+    background-color: #4c525a;
+    width: 90vw;
+    margin-right: 25px;
+    margin-top: 10px;
+    .timesheets-choice,
+    .login-choice {
+      width: 48vw;
+      display: flex;
+      justify-content: center;
+      padding-right: 10px;
+    }
+    .timesheets-choice:active,
+    .login-choice:active {
+      width: 48vw;
+      display: flex;
+      justify-content: center;
+      color: greenyellow;
+      padding-right: 10px;
+    }
+  }
+}
+.Header-title {
+  margin-left: 10px;
+  font-size: 30px;
+  letter-spacing: 1.5px;
+  border-bottom: 1px solid whitesmoke;
+  padding-bottom: 5px;
+}
+.header-date {
+  display: flex;
+  align-items: center;
+  font-size: 30px;
+  letter-spacing: 1.5px;
+  .time {
+    width: 500px;
+    display: flex;
+    justify-content: center;
+    .date {
+      width: fit-content;
+      height: 100%;
+    }
+    .day {
+      width: fit-content;
+      height: 100%;
+    }
+    .date {
+      margin-left: 10px;
+    }
+    .year {
+      height: 100%;
+      width: fit-content;
+    }
+  }
+}
+.add-task-button {
+  border: 3px white outset;
+  padding: 10px;
+  letter-spacing: 1.5px;
+  color: transparent;
+  text-shadow: 0 0 0 white;
+  text-align: center;
+  margin-right: 10px;
+}
+.add-task-button:hover {
+  border: 5px white outset;
+  padding: 10px;
+  letter-spacing: 1.5px;
+  color: transparent;
+  text-shadow: 0 0 0 white;
+  text-align: center;
+  margin-right: 10px;
+}
+.add-task-button:active {
+  border: 3px white inset;
+  padding: 10px;
+  letter-spacing: 1.5px;
+  color: transparent;
+  text-shadow: 0 0 0 white;
+  text-align: center;
+  margin-right: 10px;
+}
+.fa {
+  color: red;
+  height: 100%;
+}
+.fa-arrow-right {
+  margin-left: 20px;
+}
+.fa-arrow-left {
+  margin-right: 20px;
+}
+.choice {
+  text-decoration: none;
+  color: white;
+  font-size: 18px;
+}
