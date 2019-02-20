@@ -1,5 +1,28 @@
 .timesheet-container {
+  height: 90%;
   .header {
     color: white;
+    padding-top: 10px;
+  }
+  .columns {
+    display: flex;
+    justify-content: space-evenly;
+    height: 100%;
+    padding-top: 10px;
+    .dow-col,
+    .jp-col {
+      width: 48%;
+      display: flex;
+      background: white;
+      align-items: center;
+      padding-top: 20px;
+      flex-direction: column;
+      height: 90%;
+      .dow-header,
+      .jp-header {
+        width: 100%;
+        background: grey;
+      }
+    }
   }
 }
