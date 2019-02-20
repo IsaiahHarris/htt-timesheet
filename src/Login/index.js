@@ -6,7 +6,7 @@ const Login = () => {
     <div className="wrapper">
       <form className="login">
         <p className="title">Log in</p>
-        <input type="text" placeholder="Username" autoFocus />
+        <input type="text" placeholder="Email" autoFocus />
         <input type="password" placeholder="Password" />
         <a href="/project">Don't have an account? Register now.</a>
         <button>
