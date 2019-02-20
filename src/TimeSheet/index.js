@@ -20,6 +20,18 @@ class TimeSheet extends Component {
       'Enter Project',
       'Enter Project'
     ];
+    let today = new Date();
+    var dd = today.getDate();
+    var mm = today.getMonth() + 1; //January is 0!
+    var yyyy = today.getFullYear();
+    if (dd < 10) {
+      dd = '0' + dd;
+    }
+
+    if (mm < 10) {
+      mm = '0' + mm;
+    }
+    today = mm + '/' + dd + '/' + yyyy;
     return (
       <div className="timesheet-container">
         <div className="header">Timesheet header</div>
@@ -30,7 +42,8 @@ class TimeSheet extends Component {
               {days.map((day, key) => {
                 return (
                   <div key={key} className="day">
-                    {day}
+                    <div className="d">{day}</div>
+                    <div className="t">{today}</div>
                   </div>
                 );
               })}
