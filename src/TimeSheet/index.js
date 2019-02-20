@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-
+import './TimeSheet.scss';
 class TimeSheet extends Component {
   render() {
     return (
