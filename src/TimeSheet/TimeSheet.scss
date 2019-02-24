@@ -17,11 +17,15 @@
       align-items: center;
 
       flex-direction: column;
-      height: 90%;
+      height: 92%;
       .dow-header,
       .jp-header {
         width: 100%;
-        background: grey;
+        font-size: 18px;
+        background: white;
+        border-bottom: 0.5px solid black;
+        padding: 3px;
+        font-weight: bold;
       }
       .days {
         width: 100%;

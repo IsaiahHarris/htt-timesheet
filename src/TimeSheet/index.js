@@ -54,8 +54,8 @@ class TimeSheet extends Component {
             <div className="days">
               {jobs.map((job, key) => {
                 return (
-                  <div key={key} className="day">
-                    {job}
+                  <div className="day">
+                    <input key={key} value={job} onChange={null} />;
                   </div>
                 );
               })}
