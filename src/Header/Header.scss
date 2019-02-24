@@ -35,7 +35,8 @@
   }
 }
 .Header-title {
-  margin-left: 10px;
+  margin-left: auto;
+  width: 100%;
   font-size: 30px;
   letter-spacing: 1.5px;
   border-bottom: 1px solid whitesmoke;
@@ -108,4 +109,9 @@
   text-decoration: none;
   color: white;
   font-size: 18px;
+}
+.logo {
+  height: 30px;
+  position: absolute;
+
 }

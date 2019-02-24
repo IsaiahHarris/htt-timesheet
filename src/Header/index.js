@@ -4,7 +4,9 @@ import './Header.scss';
 const Header = () => {
   return (
     <header className="Header-header">
-      <div className="Header-title">HTT Timesheet</div>
+      <img className="logo" src={require('../assets/HTT.png')} alt=""></img>
+      <div className="Header-title">Timesheet
+      </div>
       <div className="choices">
         <Link to="/" className="choice">
           <div className="login-choice">Login</div>
