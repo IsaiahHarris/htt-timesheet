@@ -22,12 +22,16 @@ class TimeSheet extends Component {
   };
 
   changeLeft() {
-    console.log('leftClicked');
+    let pickDay = document.getElementById('pickDay');
+    pickDay.className = 'pickDay';
+    let pickTime = document.getElementById('pickTime');
+    pickTime.className = 'pickTimeHidden';
   }
   changeRight() {
     let pickDay = document.getElementById('pickDay');
     pickDay.className = 'pickDayHidden';
-    console.log('rightClicked');
+    let pickTime = document.getElementById('pickTime');
+    pickTime.className = 'pickTime';
   }
   render() {
     let days = [
@@ -204,7 +208,7 @@ class TimeSheet extends Component {
             </div>
           </div>
         </div>
-        <div className="pickTime">
+        <div className="pickTimeHidden" id="pickTime">
           <div className="columns">
             <div className="column">
               <div className="column-header">Time In</div>
