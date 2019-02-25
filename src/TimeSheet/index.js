@@ -44,6 +44,7 @@ class TimeSheet extends Component {
       'Sunday'
     ];
 
+    let shortDays = ['Mon', 'Tue', 'Wed', 'Thurs', 'Fri', 'Sat', 'Sun'];
     let today = new Date();
     var dd = today.getDate();
     var mm = today.getMonth() + 1; //January is 0!
@@ -210,11 +211,53 @@ class TimeSheet extends Component {
         </div>
         <div className="pickTimeHidden" id="pickTime">
           <div className="columns">
+            <div className="column-day">
+              <div className="column-header">Day</div>
+              {shortDays.map((day, key) => {
+                if (mm === '02') {
+                  if (dd + key <= 28) {
+                    dd += key;
+                  } else {
+                    mm = '03';
+                    dd = 0;
+                  }
+                }
+                let marchKey = 1;
+                if (mm === '03') {
+                  if (dd + marchKey <= 31) {
+                    dd += marchKey;
+                  }
+                }
+                return (
+                  <div key={key} className="day">
+                    <div>{day}</div>
+                    <div>{mm + '/' + `${dd}`}</div>
+                  </div>
+                );
+              })}
+            </div>
+
             <div className="column">
               <div className="column-header">Time In</div>
+              {shortDays.map((day, key) => {
+                return (
+                  <div key={key} className="day">
+                    <div>{day}</div>
+                    <div>{mm + '/' + `${dd}`}</div>
+                  </div>
+                );
+              })}
             </div>
             <div className="column">
               <div className="column-header">Time out</div>
+              {shortDays.map((day, key) => {
+                return (
+                  <div key={key} className="day">
+                    <div>{day}</div>
+                    <div>{mm + '/' + `${dd}`}</div>
+                  </div>
+                );
+              })}
             </div>
           </div>
         </div>
