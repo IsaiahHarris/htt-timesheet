@@ -240,23 +240,13 @@ class TimeSheet extends Component {
             <div className="column">
               <div className="column-header">Time In</div>
               {shortDays.map((day, key) => {
-                return (
-                  <div key={key} className="day">
-                    <div>{day}</div>
-                    <div>{mm + '/' + `${dd}`}</div>
-                  </div>
-                );
+                return <div key={key} className="day" />;
               })}
             </div>
             <div className="column">
               <div className="column-header">Time out</div>
               {shortDays.map((day, key) => {
-                return (
-                  <div key={key} className="day">
-                    <div>{day}</div>
-                    <div>{mm + '/' + `${dd}`}</div>
-                  </div>
-                );
+                return <div key={key} className="day" />;
               })}
             </div>
           </div>
