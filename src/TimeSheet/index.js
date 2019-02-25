@@ -1,6 +1,34 @@
 import React, { Component } from 'react';
 import './TimeSheet.scss';
 class TimeSheet extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      jobInput1: '',
+      jobInput2: '',
+      jobInput3: '',
+      jobInput4: '',
+      jobInput5: '',
+      jobInput6: '',
+      jobInput7: ''
+    };
+    this.handleInputChange = this.handleInputChange.bind(this);
+    this.changeLeft = this.changeLeft.bind(this);
+  }
+  handleInputChange = name => event => {
+    this.setState({
+      [name]: event.target.value
+    });
+  };
+
+  changeLeft() {
+    console.log('leftClicked');
+  }
+  changeRight() {
+    let pickDay = document.getElementById('pickDay');
+    pickDay.className = 'pickDayHidden';
+    console.log('rightClicked');
+  }
   render() {
     let days = [
       'Monday',
@@ -11,15 +39,7 @@ class TimeSheet extends Component {
       'Saturday',
       'Sunday'
     ];
-    let jobs = [
-      'Enter Project',
-      'Enter Project',
-      'Enter Project',
-      'Enter Project',
-      'Enter Project',
-      'Enter Project',
-      'Enter Project'
-    ];
+
     let today = new Date();
     var dd = today.getDate();
     var mm = today.getMonth() + 1; //January is 0!
@@ -32,33 +52,165 @@ class TimeSheet extends Component {
       mm = '0' + mm;
     }
     today = mm + '/' + dd + '/' + yyyy;
+
     return (
       <div className="timesheet-container">
-        <div className="header">Timesheet header</div>
-        <div className="columns">
-          <div className="dow-col">
-            <div className="dow-header">dow header</div>
-            <div className="days">
-              {days.map((day, key) => {
-                return (
-                  <div key={key} className="day">
-                    <div className="d">{day}</div>
-                    <div className="t">{today}</div>
-                  </div>
-                );
-              })}
+        <div className="header">
+          <div className="title">Timesheet</div>
+          <i
+            className="fas fa-arrow-right"
+            id="right-arrow"
+            ref="right-arrow"
+            onClick={this.changeRight}
+          />
+          <i
+            className="fas fa-arrow-left"
+            id="left-arrow"
+            ref="left-arrow"
+            onClick={this.changeLeft}
+          />
+        </div>
+        <div className="pickDay" id="pickDay">
+          <div className="columns">
+            <div className="dow-col">
+              <div className="dow-header">Day</div>
+              <div className="days">
+                {days.map((day, key) => {
+                  if (mm === '02') {
+                    if (dd + key <= 28) {
+                      dd += key;
+                    } else {
+                      mm = '03';
+                      dd = 0;
+                    }
+                  }
+                  let marchKey = 1;
+                  if (mm === '03') {
+                    if (dd + marchKey <= 31) {
+                      dd += marchKey;
+                    }
+                  }
+                  return (
+                    <div key={key} className="day">
+                      <div className="d">{day}</div>
+                      <div className="t">{mm + '/' + `${dd}` + '/' + yyyy}</div>
+                    </div>
+                  );
+                })}
+              </div>
+            </div>
+            <div className="jp-col">
+              <div className="jp-header">Project</div>
+              <div className="days">
+                <div className="day">
+                  <select
+                    onChange={this.handleInputChange('jobInput1')}
+                    value={this.state.jobInput1}
+                    className="select"
+                  >
+                    <option>01 - Par Hawaii Refinery West</option>
+                    <option>02 - Par Hawaii Refinery East</option>
+                    <option>03 - Island Energy Services</option>
+                    <option>04 - HECO</option>
+                    <option>05 - Hawaii Gas</option>
+                    <option>06 - Aloha Petroleum</option>
+                  </select>
+                </div>
+                <div className="day">
+                  <select
+                    onChange={this.handleInputChange('jobInput2')}
+                    value={this.state.jobInput2}
+                    className="select"
+                  >
+                    <option>01 - Par Hawaii Refinery West</option>
+                    <option>02 - Par Hawaii Refinery East</option>
+                    <option>03 - Island Energy Services</option>
+                    <option>04 - HECO</option>
+                    <option>05 - Hawaii Gas</option>
+                    <option>06 - Aloha Petroleum</option>
+                  </select>
+                </div>
+                <div className="day">
+                  <select
+                    onChange={this.handleInputChange('jobInput3')}
+                    value={this.state.jobInput3}
+                    className="select"
+                  >
+                    <option>01 - Par Hawaii Refinery West</option>
+                    <option>02 - Par Hawaii Refinery East</option>
+                    <option>03 - Island Energy Services</option>
+                    <option>04 - HECO</option>
+                    <option>05 - Hawaii Gas</option>
+                    <option>06 - Aloha Petroleum</option>
+                  </select>
+                </div>
+                <div className="day">
+                  <select
+                    onChange={this.handleInputChange('jobInput4')}
+                    value={this.state.jobInput4}
+                    className="select"
+                  >
+                    <option>01 - Par Hawaii Refinery West</option>
+                    <option>02 - Par Hawaii Refinery East</option>
+                    <option>03 - Island Energy Services</option>
+                    <option>04 - HECO</option>
+                    <option>05 - Hawaii Gas</option>
+                    <option>06 - Aloha Petroleum</option>
+                  </select>
+                </div>
+                <div className="day">
+                  <select
+                    onChange={this.handleInputChange('jobInput5')}
+                    value={this.state.jobInput5}
+                    className="select"
+                  >
+                    <option>01 - Par Hawaii Refinery West</option>
+                    <option>02 - Par Hawaii Refinery East</option>
+                    <option>03 - Island Energy Services</option>
+                    <option>04 - HECO</option>
+                    <option>05 - Hawaii Gas</option>
+                    <option>06 - Aloha Petroleum</option>
+                  </select>
+                </div>
+                <div className="day">
+                  <select
+                    onChange={this.handleInputChange('jobInput6')}
+                    value={this.state.jobInput6}
+                    className="select"
+                  >
+                    <option>01 - Par Hawaii Refinery West</option>
+                    <option>02 - Par Hawaii Refinery East</option>
+                    <option>03 - Island Energy Services</option>
+                    <option>04 - HECO</option>
+                    <option>05 - Hawaii Gas</option>
+                    <option>06 - Aloha Petroleum</option>
+                  </select>
+                </div>
+                <div className="day">
+                  <select
+                    onChange={this.handleInputChange('jobInput7')}
+                    value={this.state.jobInput7}
+                    className="select"
+                  >
+                    <option>01 - Par Hawaii Refinery West</option>
+                    <option>02 - Par Hawaii Refinery East</option>
+                    <option>03 - Island Energy Services</option>
+                    <option>04 - HECO</option>
+                    <option>05 - Hawaii Gas</option>
+                    <option>06 - Aloha Petroleum</option>
+                  </select>
+                </div>
+              </div>
             </div>
           </div>
-          <div className="jp-col">
-            <div className="jp-header">jp header</div>
-            <div className="days">
-              {jobs.map((job, key) => {
-                return (
-                  <div className="day">
-                    <input key={key} value={job} onChange={null} />;
-                  </div>
-                );
-              })}
+        </div>
+        <div className="pickTime">
+          <div className="columns">
+            <div className="column">
+              <div className="column-header">Time In</div>
+            </div>
+            <div className="column">
+              <div className="column-header">Time out</div>
             </div>
           </div>
         </div>

@@ -3,42 +3,148 @@
   .header {
     color: white;
     padding-top: 10px;
-  }
-  .columns {
+    padding-bottom: 10px;
+    font-size: 22px;
     display: flex;
-    justify-content: space-evenly;
-    height: 100%;
-    padding-top: 10px;
-    .dow-col,
-    .jp-col {
-      width: 48%;
-      display: flex;
-      background: white;
-      align-items: center;
+    justify-content: center;
+    align-items: center;
+    .fas.fa-arrow-right {
+      position: absolute;
+      right: 20px;
+      transform: scale(1.5, 1.5);
+    }
+    .fas.fa-arrow-left {
+      position: absolute;
+      left: 20px;
+      transform: scale(1.5, 1.5);
+    }
+  }
+  .pickDay,
+  .pickDayHidden {
+    width: 100%;
+    position: absolute;
 
-      flex-direction: column;
-      height: 92%;
-      .dow-header,
-      .jp-header {
-        width: 100%;
-        font-size: 18px;
+    .columns {
+      display: flex;
+      justify-content: space-evenly;
+      height: 100%;
+      padding-top: 10px;
+      .dow-col,
+      .jp-col {
+        width: 48%;
+        display: flex;
         background: white;
-        border-bottom: 0.5px solid black;
-        padding: 3px;
-        font-weight: bold;
-      }
-      .days {
-        width: 100%;
-        .day {
-          border-bottom: 1px solid black;
+        align-items: center;
+        flex-direction: column;
+        height: 92%;
+        .dow-header,
+        .jp-header {
           width: 100%;
-          height: 62.5px;
-          display: flex;
-          align-items: center;
-          flex-direction: column;
-          justify-content: space-evenly;
+          font-size: 18px;
+          background: white;
+          border-bottom: 0.5px solid black;
+          padding: 3px;
+          font-weight: bold;
+        }
+        .days {
+          width: 100%;
+          .day {
+            border-bottom: 1px solid black;
+            width: 100%;
+            height: 62.5px;
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            justify-content: space-evenly;
+          }
         }
       }
     }
   }
+  .pickDayHidden {
+    left: -100%;
+  }
+  .pickTime,
+  .pickTimeHidden {
+    width: 100%;
+    height: 75%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    .columns {
+      display: flex;
+      background-color: white;
+      height: 95%;
+      width: 95%;
+      .column {
+        width: 50%;
+        border-left: 1px solid black;
+        .column-header {
+          border-bottom: 0.5px solid black;
+          padding: 3px;
+          font-weight: bold;
+          color: black;
+          font-size: 18px;
+        }
+      }
+    }
+  }
+  .pickTimeHidden {
+    left: -100%;
+  }
+}
+select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+  appearance: none;
+  outline: 0;
+  box-shadow: none;
+  border: 0 !important;
+  background: #2c3e50;
+  background-image: none;
+}
+/* Custom Select */
+.select {
+  position: relative;
+  display: block;
+  width: 95%;
+  height: 30px;
+  line-height: 3;
+  background: #2c3e50;
+  overflow: hidden;
+  border-radius: 0.25em;
+}
+select {
+  width: 70%;
+  height: 100%;
+  margin: 0;
+  padding: 0 0 0 0.5em;
+  color: #fff;
+  font-weight: 500;
+  cursor: pointer;
+}
+select::-ms-expand {
+  display: none;
+}
+/* Arrow */
+.select::after {
+  content: '\25BC';
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  padding: 0 1em;
+  background: #34495e;
+  pointer-events: none;
+}
+/* Transition */
+.select:hover::after {
+  color: #f39c12;
+}
+.select::after {
+  -webkit-transition: 0.25s all ease;
+  -o-transition: 0.25s all ease;
+  transition: 0.25s all ease;
 }
