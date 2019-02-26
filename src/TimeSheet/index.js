@@ -10,11 +10,26 @@ class TimeSheet extends Component {
       jobInput4: '',
       jobInput5: '',
       jobInput6: '',
-      jobInput7: ''
+      jobInput7: '',
+      timeIn1: '',
+      timeIn2: '',
+      timeIn3: '',
+      timeIn4: '',
+      timeIn5: '',
+      timeIn6: '',
+      timeIn7: '',
+      timeOut1: '',
+      timeOut2: '',
+      timeOut3: '',
+      timeOut4: '',
+      timeOut5: '',
+      timeOut6: '',
+      timeOut7: ''
     };
     this.handleInputChange = this.handleInputChange.bind(this);
     this.changeLeft = this.changeLeft.bind(this);
   }
+
   handleInputChange = name => event => {
     this.setState({
       [name]: event.target.value
@@ -222,10 +237,11 @@ class TimeSheet extends Component {
                     dd = 0;
                   }
                 }
-                let marchKey = 1;
+                let march = 1;
+
                 if (mm === '03') {
-                  if (dd + marchKey <= 31) {
-                    dd += marchKey;
+                  if (dd + march <= 31) {
+                    dd += march;
                   }
                 }
                 return (
@@ -240,13 +256,29 @@ class TimeSheet extends Component {
             <div className="column">
               <div className="column-header">Time In</div>
               {shortDays.map((day, key) => {
-                return <div key={key} className="day" />;
+                return (
+                  <div key={key} className="day">
+                    <input
+                      className="timeInInput"
+                      type="text"
+                      onChange={this.handleInputChange('timeIn1')}
+                    />
+                  </div>
+                );
               })}
             </div>
             <div className="column">
               <div className="column-header">Time out</div>
               {shortDays.map((day, key) => {
-                return <div key={key} className="day" />;
+                return (
+                  <div key={key} className="day">
+                    <input
+                      className="timeOutInput"
+                      type="text"
+                      onChange={this.handleInputChange('timeOut1')}
+                    />
+                  </div>
+                );
               })}
             </div>
           </div>

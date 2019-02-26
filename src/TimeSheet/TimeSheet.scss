@@ -120,6 +120,11 @@
           justify-content: space-evenly;
         }
       }
+      .timeOutInput,
+      .timeInInput {
+        border: solid 1px black;
+        font-size: 16px;
+      }
       .column-day {
         width: 25%;
       }
