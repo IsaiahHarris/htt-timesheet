@@ -229,6 +229,18 @@ class TimeSheet extends Component {
             <div className="column-day">
               <div className="column-header">Day</div>
               {shortDays.map((day, key) => {
+                let today = new Date();
+                var dd = today.getDate();
+                var mm = today.getMonth() + 1; //January is 0!
+                var yyyy = today.getFullYear();
+                if (dd < 10) {
+                  dd = '0' + dd;
+                }
+
+                if (mm < 10) {
+                  mm = '0' + mm;
+                }
+                today = mm + '/' + dd + '/' + yyyy;
                 if (mm === '02') {
                   if (dd + key <= 28) {
                     dd += key;
@@ -237,11 +249,10 @@ class TimeSheet extends Component {
                     dd = 0;
                   }
                 }
-                let march = 1;
 
                 if (mm === '03') {
-                  if (dd + march <= 31) {
-                    dd += march;
+                  if (dd <= 31) {
+                    dd += key - 1;
                   }
                 }
                 return (
