@@ -292,6 +292,36 @@ class TimeSheet extends Component {
                 );
               })}
             </div>
+
+            <div className="column">
+              <div className="column-header">Time In</div>
+              {shortDays.map((day, key) => {
+                return (
+                  <div key={key} className="day">
+                    <input
+                      className="timeInInput"
+                      type="text"
+                      onChange={this.handleInputChange('timeIn1')}
+                    />
+                  </div>
+                );
+              })}
+            </div>
+            <div className="column">
+              <div className="column-header">Time out</div>
+              {shortDays.map((day, key) => {
+                return (
+                  <div key={key} className="day">
+                    <input
+                      className="timeOutInput"
+                      type="text"
+                      onChange={this.handleInputChange('timeOut1')}
+                    />
+                  </div>
+                );
+              })}
+            </div>
+            
           </div>
         </div>
       </div>
