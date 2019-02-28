@@ -109,8 +109,10 @@
       display: flex;
       justify-content: space-evenly;
       background-color: white;
-      height: 97%;
-      width: 95%;
+      height: auto;
+      width: auto;
+      border-radius: 25px;
+ 
 
       .column,
       .column-day {
