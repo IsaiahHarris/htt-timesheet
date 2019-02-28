@@ -65,12 +65,29 @@
   }
   .pickTime,
   .pickTimeHidden {
+    margin-top: 10px;
     width: 100%;
-    height: 72.5%;
+    height: 75.5%;
     display: flex;
     justify-content: center;
     align-items: center;
     position: absolute;
+    flex-direction: column;
+    .button-container {
+      display: flex;
+      justify-content: flex-end;
+      margin-right: 30px;
+      height: 80px;
+      width: 100%;
+      align-items: center;
+      .submit-button {
+        background: white;
+        border-radius: 5px;
+        height: 30px;
+        width: 150px;
+        font-size: 14px;
+      }
+    }
     .columns {
       display: flex;
       background-color: white;

@@ -293,6 +293,9 @@ class TimeSheet extends Component {
               })}
             </div>
           </div>
+          <div className="button-container">
+            <button className="submit-button">Submit Timesheet</button>
+          </div>
         </div>
       </div>
     );
