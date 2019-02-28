@@ -294,7 +294,7 @@ class TimeSheet extends Component {
             </div>
 
             <div className="column">
-              <div className="column-header">Time In</div>
+              <div className="column-header">Lunch In</div>
               {shortDays.map((day, key) => {
                 return (
                   <div key={key} className="day">
@@ -308,7 +308,7 @@ class TimeSheet extends Component {
               })}
             </div>
             <div className="column">
-              <div className="column-header">Time out</div>
+              <div className="column-header">Lunch Out</div>
               {shortDays.map((day, key) => {
                 return (
                   <div key={key} className="day">
@@ -321,7 +321,6 @@ class TimeSheet extends Component {
                 );
               })}
             </div>
-            
           </div>
           <div className="button-container">
             <button className="submit-button">Submit Timesheet</button>
