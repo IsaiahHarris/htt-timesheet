@@ -110,6 +110,11 @@ class TimeSheet extends Component {
                       dd += marchKey;
                     }
                   }
+
+                  if (dd[0] === '0') {
+                    dd = dd.slice(2, dd.length);
+                    dd = Number(dd);
+                  }
                   return (
                     <div key={key} className="day">
                       <div className="d">{day}</div>
@@ -254,6 +259,10 @@ class TimeSheet extends Component {
                   if (dd <= 31) {
                     dd += key - 1;
                   }
+                }
+                if (dd[0] === '0') {
+                  dd = dd.slice(2, dd.length);
+                  dd = Number(dd) + 2;
                 }
                 return (
                   <div key={key} className="day">
