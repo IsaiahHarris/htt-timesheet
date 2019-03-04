@@ -213,3 +213,39 @@ select::-ms-expand {
   -o-transition: 0.25s all ease;
   transition: 0.25s all ease;
 }
+
+.modal-container {
+  position: absolute;
+  height: 80vh;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.2);
+  z-index: 2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .modal-content {
+    z-index: 2;
+    background: white;
+    width: 67%;
+    height: 30%;
+    margin-bottom: 60px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 10px;
+    .button-container {
+      display: flex;
+      justify-content: flex-end;
+      height: 25%;
+      width: 100%;
+      align-items: center;
+      .submit-button {
+        background: rgb(55, 238, 55);
+        border-radius: 5px;
+        height: 100%;
+        width: 100%;
+        font-size: 14px;
+      }
+    }
+  }
+}

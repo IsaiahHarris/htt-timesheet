@@ -26,10 +26,13 @@ class TimeSheet extends Component {
       timeOut4: '',
       timeOut5: '',
       timeOut6: '',
-      timeOut7: ''
+      timeOut7: '',
+      show: false
     };
     this.handleInputChange = this.handleInputChange.bind(this);
     this.changeLeft = this.changeLeft.bind(this);
+    this.openModal = this.openModal.bind(this);
+    this.closeModal = this.closeModal.bind(this);
   }
 
   handleInputChange = name => event => {
@@ -37,7 +40,19 @@ class TimeSheet extends Component {
       [name]: event.target.value
     });
   };
-
+  closeModal(e) {
+    if (e.target.id !== 'content' && e.target.id !== 'button') {
+      console.log(e.target);
+      this.setState({
+        show: false
+      });
+    }
+  }
+  openModal() {
+    this.setState({
+      show: true
+    });
+  }
   changeLeft() {
     let pickDay = document.getElementById('pickDay');
     pickDay.className = 'pickDay';
@@ -283,9 +298,24 @@ class TimeSheet extends Component {
             </div>
           </div>
           <div className="button-container">
-            <button className="submit-button">Submit Timesheet</button>
+            <button className="submit-button" onClick={this.openModal}>
+              Submit
+            </button>
           </div>
         </div>
+        {this.state.show && (
+          <div className="modal-container" onClick={this.closeModal}>
+            <div ref="content" className="modal-content" id="content">
+              Clicking submit confirms your e-signature and that this document
+              contains accurate information.
+              <div className="button-container">
+                <button className="submit-button" onClick={this.closeModal}>
+                  Submit Timesheet
+                </button>
+              </div>
+            </div>
+          </div>
+        )}
       </div>
     );
   }
