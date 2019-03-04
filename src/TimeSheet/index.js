@@ -98,29 +98,9 @@ class TimeSheet extends Component {
               <div className="dow-header">Day</div>
               <div className="days">
                 {days.map((day, key) => {
-                  if (mm === '02') {
-                    if (dd + key <= 28) {
-                      dd += key;
-                    } else {
-                      mm = '03';
-                      dd = 0;
-                    }
-                  }
-                  let marchKey = 1;
-                  if (mm === '03') {
-                    if (dd + marchKey <= 31) {
-                      dd += marchKey;
-                    }
-                  }
-
-                  if (dd[0] === '0') {
-                    dd = dd.slice(2, dd.length);
-                    dd = Number(dd);
-                  }
                   return (
                     <div key={key} className="day">
                       <div className="d">{day}</div>
-                      <div className="t">{mm + '/' + `${dd}` + '/' + yyyy}</div>
                     </div>
                   );
                 })}
@@ -236,40 +216,9 @@ class TimeSheet extends Component {
             <div className="column-day">
               <div className="column-header">Day</div>
               {shortDays.map((day, key) => {
-                let today = new Date();
-                var dd = today.getDate();
-                var mm = today.getMonth() + 1; //January is 0!
-                var yyyy = today.getFullYear();
-                if (dd < 10) {
-                  dd = '0' + dd;
-                }
-
-                if (mm < 10) {
-                  mm = '0' + mm;
-                }
-                today = mm + '/' + dd + '/' + yyyy;
-                if (mm === '02') {
-                  if (dd + key <= 28) {
-                    dd += key;
-                  } else {
-                    mm = '03';
-                    dd = 0;
-                  }
-                }
-
-                if (mm === '03') {
-                  if (dd <= 31) {
-                    dd += key - 1;
-                  }
-                }
-                if (dd[0] === '0') {
-                  dd = dd.slice(2, dd.length);
-                  dd = Number(dd) + 2;
-                }
                 return (
                   <div key={key} className="day">
                     <div>{day}</div>
-                    <div>{mm + '/' + `${dd}`}</div>
                   </div>
                 );
               })}
