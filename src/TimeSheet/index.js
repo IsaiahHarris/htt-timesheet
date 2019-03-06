@@ -4,7 +4,6 @@ class TimeSheet extends Component {
   constructor(props) {
     super(props);
 
-    //this.state
     this.state = {
       jobInput1: '',
       jobInput2: '',
@@ -34,7 +33,7 @@ class TimeSheet extends Component {
     this.openModal = this.openModal.bind(this);
     this.closeModal = this.closeModal.bind(this);
   }
-
+  //handle input change function for timesheet form
   handleInputChange = name => event => {
     this.setState({
       [name]: event.target.value
