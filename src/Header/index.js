@@ -5,8 +5,10 @@ const Header = () => {
   //header component, would like to add more functionality
   return (
     <header className="Header-header">
-      <img className="logo" src={require('../assets/HTT.png')} alt="" />
-      <div className="Header-title">Timesheet</div>
+      <div className="header-title-container">
+        <img className="logo" src={require('../assets/HTT.png')} alt="" />
+        <div className="Header-title">Timesheet</div>
+      </div>
       <div className="choices">
         {/* two link choices for now */}
         <Link to="/" className="choice">

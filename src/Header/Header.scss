@@ -34,16 +34,18 @@
     }
   }
 }
-.Header-title {
-  margin-left: auto;
-  width: 100%;
-  font-size: 30px;
-  letter-spacing: 1.5px;
-  border-bottom: 1px solid whitesmoke;
-  padding-bottom: 5px;
-  display: flex;
-  justify-content: center;
-  height: 100%;
+.header-title-container {
+  .Header-title {
+    margin-left: auto;
+    width: 100%;
+    font-size: 30px;
+    letter-spacing: 1.5px;
+    border-bottom: 1px solid whitesmoke;
+    padding-bottom: 5px;
+    display: flex;
+    justify-content: center;
+    height: 100%;
+  }
 }
 .header-date {
   display: flex;
@@ -115,5 +117,4 @@
 }
 .logo {
   height: 30px;
-  position: absolute;
 }
