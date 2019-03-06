@@ -39,6 +39,8 @@ class TimeSheet extends Component {
       [name]: event.target.value
     });
   };
+
+  // open and close modal by changing state functions
   closeModal(e) {
     if (e.target.id !== 'content' && e.target.id !== 'button') {
       console.log(e.target);
@@ -52,6 +54,7 @@ class TimeSheet extends Component {
       show: true
     });
   }
+
   changeLeft() {
     let pickDay = document.getElementById('pickDay');
     pickDay.className = 'pickDay';
