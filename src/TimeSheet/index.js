@@ -68,6 +68,7 @@ class TimeSheet extends Component {
     pickTime.className = 'pickTime';
   }
   render() {
+    //days to be used in map function rendering days
     let days = [
       'Monday',
       'Tuesday',
