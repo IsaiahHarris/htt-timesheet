@@ -54,7 +54,7 @@ class TimeSheet extends Component {
       show: true
     });
   }
-
+  //switch pages left and right
   changeLeft() {
     let pickDay = document.getElementById('pickDay');
     pickDay.className = 'pickDay';
