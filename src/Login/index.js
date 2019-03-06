@@ -2,6 +2,7 @@ import React from 'react';
 import './Login.scss';
 import { Link } from 'react-router-dom';
 const Login = () => {
+  //add register button to register page
   return (
     <div className="wrapper">
       <form className="login">
