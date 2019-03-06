@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
-const timesheet = require('./timesheet');
 
-router.use('/timesheet', timesheet);
+router.get('/', (req, res) => {
+  console.log('timesheet got');
+});
 module.exports = router;
