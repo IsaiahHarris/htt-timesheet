@@ -35,16 +35,17 @@
   }
 }
 .header-title-container {
+  display: flex;
+  justify-content: center;
+  width: 100%;
   .Header-title {
-    margin-left: auto;
-    width: 100%;
+    width: fit-content;
     font-size: 30px;
     letter-spacing: 1.5px;
     border-bottom: 1px solid whitesmoke;
     padding-bottom: 5px;
-    display: flex;
-    justify-content: center;
     height: 100%;
+    margin-left: 20px;
   }
 }
 .header-date {
