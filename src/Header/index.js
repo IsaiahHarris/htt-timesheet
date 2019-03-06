@@ -8,6 +8,8 @@ const Header = () => {
       <img className="logo" src={require('../assets/HTT.png')} alt="" />
       <div className="Header-title">Timesheet</div>
       <div className="choices">
+        {/* 
+      two link choices for now */}
         <Link to="/" className="choice">
           <div className="login-choice">Login</div>
         </Link>
