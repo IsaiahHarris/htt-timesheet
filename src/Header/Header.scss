@@ -38,11 +38,13 @@
   display: flex;
   justify-content: center;
   width: 100%;
+  border-bottom: 1px solid whitesmoke;
+  padding-bottom: 8px;
   .Header-title {
     width: fit-content;
     font-size: 30px;
     letter-spacing: 1.5px;
-    border-bottom: 1px solid whitesmoke;
+
     padding-bottom: 5px;
     height: 100%;
     margin-left: 20px;
