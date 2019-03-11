@@ -6,7 +6,7 @@ const Header = () => {
     <header className="Header-header">
       <div className="header-title-container">
         <img className="logo" src={require('../assets/HTT.png')} alt="" />
-        <div className="Header-title">Timesheet</div>
+        <div className="Header-title">Time sheet</div>
       </div>
       <div className="choices">
         <Link to="/" className="choice">
